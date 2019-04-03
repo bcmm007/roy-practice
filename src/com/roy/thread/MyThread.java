@@ -79,16 +79,19 @@ public class MyThread extends Thread {
 //      try {
 //			Thread.sleep(2000);
 //		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
 //      System.out.println("run threadName=" + this.currentThread().getName() + " end " + System.currentTimeMillis());
 //    }
     /*
      * FunctionId:A09
-     * getId()
+     * 停止线程:interrupt
+     * stop,suspend,resume都已废弃过期，不安全
      */
-    public void run() {
-    	Thread runT
-    }
+//    public void run() {
+//    	super.run();
+//    	for (int i = 0; i< 15000; i++) {
+//    		System.out.println("i = " + (i));
+//    	}
+//    }
 }
