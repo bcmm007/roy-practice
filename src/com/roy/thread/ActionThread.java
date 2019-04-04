@@ -156,7 +156,55 @@ public class ActionThread {
 //		System.out.println("是否停止2 = " + Thread.interrupted());
 //		System.out.println("end!");
 		/*
-		 * 
+		 * FunctionId:A10
+		 * 输出：在5906的时候停止，打印了停止提示文字，但是"end"也打印了，也就是for之后的语句继续执行了
 		 */
+//		MyThread myThread = new MyThread();
+//		myThread.start();
+//		Thread.sleep(50);
+//		myThread.interrupt();
+//		System.out.println("end");
+		/*
+		 * FunctionId:A11
+		 * 输出：在5552的时候停止，打印了停止提示文字，"end"打印了，方法内for循环之后的文字也被打印了
+		 * 说明：说明线程继续执行了
+		 */
+//		MyThread myThread = new MyThread();
+//		myThread.start();
+//		Thread.sleep(50);
+//		myThread.interrupt();
+//		System.out.println("end");
+		/*
+		 * FunctionId:A12
+		 * 输出：在5552的时候停止，打印了停止提示文字，"end"打印了，方法内for循环之后的文字在异常中被打印
+		 */
+//		MyThread myThread = new MyThread();
+//		myThread.start();
+//		Thread.sleep(50);
+//		myThread.interrupt();
+//		System.out.println("end");
+		/*
+		 * FunctionId:A13
+		 * 输出：如果在方法内处理异常，会打印begin，end，在沉睡中被终止。否则，只打印begin
+		 */
+//		try {
+//		    MyThread myThread = new MyThread();
+//		    myThread.start();
+//		    Thread.sleep(200);
+//		    myThread.interrupt();
+//		} catch(InterruptedException e) {
+//			System.out.println("main catch");
+//			e.printStackTrace();
+//		}
+//		System.out.println("end!");
+		/*
+		 * FunctionId:A14
+		 * 输出：先输出了end，然后打印数字，然后是run begin，最后进入了异常处理
+		 * 说明：执行顺序，启动线程，开始数字打印，发出终止信号，线程中继续打印，数字打印结束，打印run beging，进入sleep，由于已收到了终止信号，sleep异常
+		 */
+		MyThread myThread = new MyThread();
+		myThread.start();
+		myThread.interrupt();
+		System.out.println("end!");
 	}
 }
