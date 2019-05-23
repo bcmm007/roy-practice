@@ -4,9 +4,9 @@ import re
 
 class StringUtil(Object):
 	#声明正则模板
-	templSubjectSerial = '(^[0-9]+)[.，、]'    #去除题号，如：1.
-    templSubjectScore = '(^[\（\(])([0-9]+)(分)([\)\）])'    #去除分数 如(14分)
-    templSubjectFrom = '(^[\（\(])(.+?)([省市])([\)\）])'    #去掉来源
+    templSubjectSerial = '^[0-9]+)[.，、]'    #去除题号，如：1.
+    templSubjectScore = '^[\（\(])([0-9]+)(分)([\)\）]'    #去除分数 如(14分)
+    templSubjectFrom = '^[\（\(])(.+?)([省市])([\)\）]'    #去掉来源
     templSubjectFlag = '[,.;:"!?，。 _　：；！？、．（）]'
     
     '''
