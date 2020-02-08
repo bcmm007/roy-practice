@@ -2,6 +2,11 @@
 *.log
 *.log.*
 .DS_Store
-.project
+*.project
 .settings
 .classpath
+.idea/
+*.iml
+.pydevproject
+out
+gen
